@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-i=c3w=_ejlug6v$w%^o13ubu4#r07ft0&a&p#c@ijt2ia6ysd$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 
 # Application definition
@@ -77,10 +77,10 @@ WSGI_APPLICATION = "interactify.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": BASE_DIR / "db.sqlite3",
+    # }
 }
 
 
@@ -129,3 +129,5 @@ LOGOUT_URL="logout"
 EMAIL_BACKEND="django.core.mail.backends.console.EmailBackend"
 MEDIA_ROOT=os.path.join(BASE_DIR,'pictures/')
 MEDIA_URL="/pictures/"
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
