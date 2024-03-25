@@ -1,0 +1,43 @@
+{% extends 'user/base.html' %}
+{%block body%}
+
+<h1 class="font-bold text-2xl m-8 flex justify-center">🧑Register User</h1>
+<div class=" flex justify-center">
+<form method="POST" class="bg-white shadow-md m-10 w-2/5 rounded px-8 pt-6">
+    {%csrf_token%}
+    <div class="mb-2">
+        <div class="mb-2">
+            <label class="block text-grey-600 text-sm font-bold mb-3"for="">Username</label>
+            <div class="shadow appearance-none border rounded py-2 px-3 mr-10 text-grey-600">{{user_form.username}}
+            </div>
+        </div>
+        <label class="block text-grey-600 text-sm font-bold mb-3"for="">Email</label>
+        <div class="shadow appearance-none border rounded py-2 px-3 mr-10 text-grey-600">{{user_form.email}}
+        </div>
+    </div>
+<div class="mb-2">
+    <label class="block text-grey-600 text-sm font-bold mb-3"for="">First Name</label>
+    <div class="shadow appearance-none border rounded py-2 px-3 mr-10 text-grey-600">{{user_form.first_name}}
+    </div>
+</div>
+<div class="mb-2">
+    <label class="block text-grey-600 text-sm font-bold mb-3"for="">Last Name</label>
+    <div class="shadow appearance-none border rounded py-2 px-3 mr-10 text-grey-600">{{user_form.last_name}}
+    </div>
+</div>
+<div class="mb-2">
+    <label class="block text-grey-600 text-sm font-bold mb-3"for="">Password</label>
+    <div class="shadow appearance-none border rounded py-2 px-3 mr-10 text-grey-600">{{user_form.password}}
+    </div>
+</div>
+<div class="mb-2">
+    <label class="block text-grey-600 text-sm font-bold mb-3"for=""> ConfirmPassword</label>
+    <div class="shadow appearance-none border rounded py-2 px-3 mr-10 text-grey-600">{{user_form.password_2}}
+    </div>
+</div>
+
+    <button class="text-white bg-green-500 px-4 py-2 mb-2" type="submit">Login</button>
+</form>
+
+</div>
+{%endblock%}

@@ -1,0 +1,33 @@
+
+{%extends 'user/base.html'%}
+{%block body%}
+<h2 class="text-3xl font-bold m-10 mx-80 flex justify-center">📬Create Post </h2>
+<div class="flex justify-center">
+<form method="POST" enctype="multipart/form-data" class="  m-10 px-5 mb-5 rounded bg-white shadow-md w-2/5">
+    {%csrf_token%}
+    <div class="mb-2">
+    <label class="block text-grey-800 text-sm font-bold mb-2" for="">Post Title</label>
+    <div class="shadow appearance-none border rounded px-2 py-3 mr-10 text-grey-500">{{form.title}}
+    </div>
+    </div>
+    <div class="mb-2">
+        <label class="block text-grey-800 text-sm font-bold mb-2" for="">Image</label>
+        <div class="shadow appearance-none border rounded px-2 py-3 mr-10 text-grey-500">{{form.image}}
+        </div>
+        </div>
+        <div class="mb-2">
+            <label class="block text-grey-800 text-sm font-bold mb-2" for="">Caption</label>
+            <div class="shadow appearance-none border rounded px-2 py-3 mr-10 text-grey-500">{{form.caption}}
+            </div>
+            </div>
+    <button type="submit" class="bg-green-500 text-white my-5 px-5 py-2 rounded ">Submit</button>
+</form>
+</div>
+
+{%endblock%}
+
+<form method="POST" enctype='multipart/form-data'>
+    {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit">Post</button>
+</form>
